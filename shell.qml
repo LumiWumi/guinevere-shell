@@ -1,5 +1,7 @@
 import Quickshell
 import QtQuick
+import "./bar"
+
 
 // Overlaying/root window - Anchors to all sides of the screen
 PanelWindow {
@@ -22,4 +24,6 @@ PanelWindow {
     Region { x: 0; y: 0; width: 40; height: 1080 }
     Region { x: 1900; y: 0; width: 20; height: 1080 }
   }
+
+  Bar{}
 }
