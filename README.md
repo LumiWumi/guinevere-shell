@@ -1,7 +1,9 @@
 # guinevere-shell
 Quickshell dots customized for the vtuber ChGuinevere
 
-# Credits
+Mainly comprised of a taskbar
+
+# Art Credits
 Model art: minsgraph
 
 Model rig: Lanaoi729

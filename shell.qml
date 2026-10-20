@@ -19,10 +19,10 @@ PanelWindow {
   // input mask makes it so that only set regions can be clicked
   // WIP: Need to make it so that it pull from monitor settings
   mask: Region {
-    Region { x: 0; y: 0; width: 1920; height: 20 }
-    Region { x: 0; y: 1060; width: 1920; height: 20 }
-    Region { x: 0; y: 0; width: 40; height: 1080 }
-    Region { x: 1900; y: 0; width: 20; height: 1080 }
+    Region { x: 0; y: 0; width: Screen.width; height: 10 }
+    Region { x: 0; y: Screen.height - 10; width: Screen.width; height: 10 }
+    Region { x: 0; y: 0; width: 40; height: Screen.height }
+    Region { x: Screen.width - 10; y: 0; width: 10; height: Screen.height }
   }
 
   Bar{}
