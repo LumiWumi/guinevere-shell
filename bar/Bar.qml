@@ -2,6 +2,7 @@ import Quickshell
 import QtQuick
 import QtQuick.Shapes
 import Qt5Compat.GraphicalEffects
+import "../shutdown"
 
 Shape {
   // Id
@@ -19,6 +20,9 @@ Shape {
     radius: 20
     samples: 32 
   }
+
+  //Shutdown Button
+  ShutdownButton{}
 
   // Drawing coordinates
   ShapePath {
