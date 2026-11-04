@@ -8,12 +8,13 @@ Button {
 
   required property color backgroundColor
   required property string iconSource
+  
 
   icon {
     source: iconSource
     width: 100
     height: 100
-    color: "transparent"
+    color: shutdownMenuButton.hovered ? "#b49a77" : "#9f835e"
   }
 
   padding: 10
@@ -24,8 +25,19 @@ Button {
 
   background: Rectangle {
     color: shutdownMenuButton.hovered ? "#b49a77" : "#9f835e"
-    radius: 100
+    radius: 30
+    Image {
+      x: 1; y: 1
+      width: 58; height: 58
+      source: "resources/BG.png"
+    }
+    Image {
+      source: "resources/buttonBorder.png"
+      width: 120; height:120
+      x: -30; y: -30
+    }
   }
+
 }
 
 

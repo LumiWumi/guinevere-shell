@@ -21,44 +21,19 @@ PanelWindow {
   }
 
   Image {
-    x: (Screen.width / 2) - (width / 2) - 405; y: (Screen.height / 3) - (height / 2)
+    x: (Screen.width / 2) - (width / 2) - 205; y: (Screen.height / 3) - (height / 2)
     source: "resources/leftWing.png"
   }
   Image {
-    x: (Screen.width / 2) - (width / 2) + 405; y: (Screen.height / 3) - (height / 2)
+    x: (Screen.width / 2) - (width / 2) + 205; y: (Screen.height / 3) - (height / 2)
     source: "resources/rightWing.png"
   }
   Image {
-    x: (Screen.width / 2); y: (Screen.height / 3) - 50
-    width: 400; height: 400
-    rotation: 45
-    source: "resources/tail.png"
-  }
-
-  Rectangle {
-    // background for buttons
-    x: (Screen.width / 3) - 35; y: Screen.height * 2 / 3 - 5
-    width: (Screen.width / 3) + 70
-    height: 70
-    radius: 100
-    color: "#4c0004"
-    border.color: "#9f835e"
-
-    Rectangle {
-      x: 70; y: 30
-      width: Screen.width / 6 - 70
-      radius: 100
-      height: 10
-      color: "#7cb13243"
-    }
-
-    Rectangle {
-      x: 70 + Screen.width / 6; y: 30
-      width: Screen.width / 6 - 70
-      radius: 100
-      height: 10
-      color: "#7cb13243"
-    }
+    x: (Screen.width / 3) - 400; y: Screen.height * 2 / 3 - 87
+    rotation: 180
+    width: 1200
+    height: 250
+    source: "resources/SwordPNG.png"
   }
 
   ShutdownMenuButton{

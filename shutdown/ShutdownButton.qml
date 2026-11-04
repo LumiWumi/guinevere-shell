@@ -6,7 +6,7 @@ Item {
   // id
   id: shutdown
   x: 5
-  y: 1045
+  y: Screen.height - 35
   height: 30
   width:  30
 
