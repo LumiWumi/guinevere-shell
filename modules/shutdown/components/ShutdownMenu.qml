@@ -3,6 +3,8 @@ import QtQuick
 import QtMultimedia
 import QtQuick.Controls
 import Quickshell.Wayland
+import qs.components
+import qs.services
 
 PanelWindow {
     id: shutdownMenu
@@ -39,14 +41,18 @@ PanelWindow {
         source: Quickshell.shellDir + "/resources/SwordPNG.png"
     }
 
-    ShutdownMenuButton {
+    IconButton {
         x: (Screen.width / 3) - (width / 2)
         y: Screen.height * 2 / 3
         iconSource: Quickshell.shellDir + "/resources/lockIcon.svg"
-
+        highlight: true
+        iconColor: "#9f835e"
+        backgroundSource: Quickshell.shellDir + "/resources/BG.png"
+        backgroundPadding: 1
+        backgroundColor: hovered ? Qt.lighter("#9f835e") : "#9f835e"
         onClicked: {
+            Lock.lock();
             shutdownMenu.visible = false;
-            Quickshell.execDetached(["hyprlock"]);
         }
     }
 

@@ -1,7 +1,7 @@
 import Quickshell
 import QtQuick
 import QtQuick.Controls
-import qs.modules.shutdown
+import qs.modules.shutdown.components
 
 Item {
     // id
