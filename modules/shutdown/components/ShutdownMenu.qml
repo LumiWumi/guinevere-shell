@@ -1,10 +1,9 @@
 import Quickshell
 import QtQuick
-import QtMultimedia
-import QtQuick.Controls
 import Quickshell.Wayland
 import qs.components
 import qs.services
+import qs.theme
 
 PanelWindow {
     id: shutdownMenu
@@ -44,32 +43,48 @@ PanelWindow {
     IconButton {
         x: (Screen.width / 3) - (width / 2)
         y: Screen.height * 2 / 3
+
         iconSource: Quickshell.shellDir + "/resources/lockIcon.svg"
-        highlight: true
-        iconColor: "#9f835e"
+        borderSource: Quickshell.shellDir + "/resources/buttonBorder.png"
         backgroundSource: Quickshell.shellDir + "/resources/BG.png"
-        backgroundPadding: 1
-        backgroundColor: hovered ? Qt.lighter("#9f835e") : "#9f835e"
+
+        iconColor: Colorscheme.gold
+        backgroundColor: hovered ? Qt.lighter(Colorscheme.gold) : Colorscheme.gold
+
         onClicked: {
-            Lock.lock();
+            Session.lock();
             shutdownMenu.visible = false;
         }
     }
 
-    ShutdownMenuButton {
+    IconButton {
         x: (Screen.width) / 2 - (width / 2)
         y: Screen.height * 2 / 3
-        iconSource: Quickshell.shellDir + "/resources/shutdownIcon.svg"
 
-        onClicked: Quickshell.execDetached(["shutdown", "-h", "now"])
+        iconSource: Quickshell.shellDir + "/resources/shutdownIcon.svg"
+        borderSource: Quickshell.shellDir + "/resources/buttonBorder.png"
+        backgroundSource: Quickshell.shellDir + "/resources/BG.png"
+
+        iconColor: Colorscheme.gold
+        backgroundColor: hovered ? Qt.lighter(Colorscheme.gold) : Colorscheme.gold
+        onClicked: {
+            Session.shutdown();
+        }
     }
 
-    ShutdownMenuButton {
+    IconButton {
         x: (Screen.width * 2 / 3) - (width / 2)
         y: Screen.height * 2 / 3
-        iconSource: Quickshell.shellDir + "/resources/restartIcon.svg"
 
-        onClicked: Quickshell.execDetached(["reboot"])
+        iconSource: Quickshell.shellDir + "/resources/restartIcon.svg"
+        borderSource: Quickshell.shellDir + "/resources/buttonBorder.png"
+        backgroundSource: Quickshell.shellDir + "/resources/BG.png"
+
+        iconColor: Colorscheme.gold
+        backgroundColor: hovered ? Qt.lighter(Colorscheme.gold) : Colorscheme.gold
+        onClicked: {
+            Session.reboot();
+        }
     }
 
     Rectangle {
@@ -79,12 +94,11 @@ PanelWindow {
         height: 400
         width: 400
         radius: 400
-        color: "#4c0004"
-        border.color: "#9f835e"
+        color: Colorscheme.maroon
+        border.color: Colorscheme.gold
 
         Image {
             anchors.centerIn: parent
-            fillMode: Image.Stretch
             source: Quickshell.shellDir + "/resources/decorationIcon.png"
             width: 390
             height: 390

@@ -5,12 +5,12 @@ import QtQuick.Controls
 Button {
     id: button
 
-    required property string iconSource
+    property string iconSource: ""
     property string borderSource: ""
     property color backgroundColor: "#FFFFFF"
     property string backgroundSource: ""
-    required property color iconColor
-    required property bool highlight
+    property color iconColor: "#000000"
+    property bool highlight: true
     property int backgroundPadding: 0
     property int iconWidth: width
     property int iconHeight: height
@@ -37,9 +37,11 @@ Button {
 
     Image {
         id: border
+        z: -1
         anchors.centerIn: parent
+        width: button.width * 2
+        height: button.height * 2
         source: button.borderSource
-        anchors.fill: parent
     }
 
     icon {
